@@ -1,0 +1,15 @@
+.mobile-menu {
+  background-color: white;
+  visibility: hidden;
+  transform: translateY(0);
+  opacity: 0;
+  transition: 0.5s;
+  z-index: 10;
+}
+
+.opened {
+  visibility: visible !important;
+  transition: 0.5s !important;
+  transform: translateY(100px) !important;
+  opacity: 1;
+}

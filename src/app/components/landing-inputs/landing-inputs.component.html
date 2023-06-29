@@ -1,0 +1,61 @@
+<div class="flex md:flex-row flex-col items-center h-[80px] py-3 gap-4">
+  <div class="relative w-full">
+    <div
+      class="absolute inset-y-0 right-0 flex items-center pl-3 pointer-events-none"
+    >
+      <img
+        src="https://eventlify-com-data.s3.us-east-2.amazonaws.com/images/auctions/svg/search-icon.svg"
+        alt=""
+      />
+    </div>
+    <input
+      type="text"
+      id="input-group-1"
+      class="bg-transparent border-gray-300 text-gray-900 text-xl rounded-lg focus-visible:border-transparent focus:outline-none focus:border-transparent block w-full pl-0 p-2.5"
+      placeholder="Search Tournament Items"
+    />
+  </div>
+  <div class="h-full w-px self-stretch bg-black relative">
+    <img
+      class="absolute hidden md:block bottom-[-45%] min-w-[24px] left-[-13px]"
+      src="https://auctions.eventlify.com/build/frontend/images/eventlify-small.png"
+      alt=""
+    />
+  </div>
+  <div class="relative w-full">
+    <div
+      class="absolute inset-y-0 right-0 flex items-center pl-3 pointer-events-none"
+    >
+      <img
+        src="https://eventlify-com-data.s3.us-east-2.amazonaws.com/images/auctions/svg/category-icon.svg"
+        alt=""
+      />
+    </div>
+    <div class="relative">
+      <input
+        disabled
+        type="text"
+        id="modal-inp"
+        class="cursor-default bg-transparent border-gray-300 text-gray-900 text-xl rounded-lg focus-visible:border-transparent focus:outline-none focus:border-transparent block w-full pl-0 p-2.5"
+        [placeholder]="selectedValue"
+      />
+      <div
+        class="cursor-default absolute top-[-10px] left-0 right-0 bg-white"
+        id="modal"
+      >
+        <div
+          class="p-3 text-lg font-normal cursor-pointer"
+          *ngFor="let setting of modalSettings"
+          (click)="setValue(setting)"
+        >
+          {{ setting }}
+        </div>
+        <img
+          class="absolute top-3 right-3"
+          src="https://eventlify-com-data.s3.us-east-2.amazonaws.com/images/auctions/svg/cross-icon.svg"
+          alt=""
+        />
+      </div>
+    </div>
+  </div>
+</div>
