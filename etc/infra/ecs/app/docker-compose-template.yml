@@ -1,0 +1,20 @@
+version: '3'
+
+services:
+
+  ${API_CONTAINER_NAME}:
+    image: ${AWS_ACCOUNT_ID}.dkr.ecr.${REGION}.amazonaws.com/${API_CONTAINER_IMAGE}:${IMAGE_ID}-${ENVIRONMENT}
+    command: /usr/local/bin/node server.js
+    working_dir: /opt/app
+    env_file:
+      - ../../.env
+    ports:
+      - ${API_CONTAINER_PORT}:${API_CONTAINER_PORT}
+    expose:
+      - ${API_CONTAINER_PORT}
+    logging:
+      driver: awslogs
+      options:
+        awslogs-group: ${API_AWS_LOG_GROUP}
+        awslogs-region: ${REGION}
+        awslogs-stream-prefix: ecs
