@@ -30,7 +30,7 @@ phases:
       - RESULT=$(jq '.failures | length' image_result.json) && rm image_result.json
       - echo $RESULT
       - |
-        if  [ "$RESULT" -gt "0" ]; then
+        if  true; then
           aws s3 cp $SECRET_BUCKET/$IMAGE_REPO_NAME/$ENVIRONMENT/ . --recursive --region $AWS_DEFAULT_REGION
           ls
           docker build -t $IMAGE_REPO_NAME -f $DOCKERFILE_PATH .
