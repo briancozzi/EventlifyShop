@@ -43,7 +43,7 @@ pipeline {
         } // end stage Setup
         stage('Build') {
             environment { 
-                BUILDSPEC_FILE = 'etc/infra/pipelines/deployment/buildstep.yaml' 
+                BUILDSPEC_FILE = 'etc/infra/pipelines/deployment/buildstep.yml' 
             }
             steps {
                 echo "### starting stage Build ###"
@@ -61,7 +61,7 @@ pipeline {
         } //end stage Build
         stage('Deploy') {
             environment { 
-                BUILDSPEC_FILE = 'etc/infra/pipelines/deployment/deploystep.yaml' 
+                BUILDSPEC_FILE = 'etc/infra/pipelines/deployment/deploystep.yml' 
             }
             steps {
                 echo "### starting stage Deploy ###"
