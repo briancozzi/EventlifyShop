@@ -8,6 +8,8 @@ import { FooterComponent } from './components/footer/footer.component';
 import { LandingComponent } from './pages/landing/landing.component';
 import { LandingInputsComponent } from './components/landing-inputs/landing-inputs.component';
 import { BurgerCloseComponent } from './components/burger-close/burger-close.component';
+import { ProductDetailComponent } from './pages/product-detail/product-detail.component';
+import { ProductDetailCarouselComponent } from './components/product-detail-carousel/product-detail-carousel.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +18,9 @@ import { BurgerCloseComponent } from './components/burger-close/burger-close.com
     FooterComponent,
     LandingComponent,
     LandingInputsComponent,
-    BurgerCloseComponent
+    BurgerCloseComponent,
+    ProductDetailComponent,
+    ProductDetailCarouselComponent
   ],
   imports: [
     BrowserModule,
