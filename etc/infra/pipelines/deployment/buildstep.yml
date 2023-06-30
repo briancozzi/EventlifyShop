@@ -3,7 +3,7 @@ version: 0.2
 env:
   shell: bash
   variables:
-    AWS_DEFAULT_REGION: us-west-2
+    AWS_DEFAULT_REGION: us-east-2
     IMAGE_REPO_NAME: shop
     AWS_ACCOUNT_ID: 496576512777
     DOCKERFILE_PATH: etc/docker/Dockerfile
