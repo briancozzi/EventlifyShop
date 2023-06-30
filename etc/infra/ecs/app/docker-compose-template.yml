@@ -2,7 +2,7 @@ version: '3'
 
 services:
   ${APP_CONTAINER_NAME}:
-    image: ${AWS_ACCOUNT_ID}.dkr.ecr.${REGION}.amazonaws.com/${APP_CONTAINER_IMAGE}:${IMAGE_ID}
+    image: ${AWS_ACCOUNT_ID}.dkr.ecr.${REGION}.amazonaws.com/${APP_CONTAINER_IMAGE}:${IMAGE_ID}-${ENVIRONMENT}
     ports:
       - ${APP_CONTAINER_PORT}:${APP_CONTAINER_PORT}
     logging:
