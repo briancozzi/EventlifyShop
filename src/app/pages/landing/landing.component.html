@@ -1,10 +1,10 @@
 <div class="bg-[#F8F8F8] flex flex-col items-center pb-16">
   <div class="w-full flex justify-center border-b-2 md:border-[#7BC35E]">
-    <div class="w-9/12 max-w-[1000px]">
+    <div class="w-9/12 max-w-[1070px]">
       <app-landing-inputs></app-landing-inputs>
     </div>
   </div>
-  <div class="w-9/12 max-w-[1000px] md:m-0 mt-16">
+  <div class="w-9/12 max-w-[1070px] md:m-0 mt-16">
     <p class="text-[#7FC664] mb-5 mt-10">
       Total Items<span class="text-black"> (327)</span>
     </p>
@@ -27,15 +27,17 @@
           <img
             [src]="card.pic"
             alt=""
-            class="w-[100%] h-[320px] object-cover"
+            class="w-[100%] h-[320px] object-cover hover:opacity-75 duration-200"
           />
+          <a href="/detail" class="cursor-pointer">
           <div class="w-[85%] mx-auto border-2 p-3 border-t-0">
             <p class="text-lg text-[#043645] font-semibold">{{ card.name }}</p>
             <p class="text-lg text-[#043645] font-semibold">{{ card.desc }}</p>
-            <p class="text-[#75C257] text-2xl">
+            <p class="text-[#75C257] text-2xl mt-4">
               {{ card.price }}/<span class="text-lg">{{ card.sub }}</span>
             </p>
           </div>
+        </a>
         </div>
       </div>
     </div>

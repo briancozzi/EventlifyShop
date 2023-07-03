@@ -1,0 +1,54 @@
+<div class="bg-[#F6F6F6] pt-11 h-full pb-20 md:pb-0">
+  <div class="w-[100%] max-w-[500px] pl-[30px]">
+    <p class="text-[#043645] text-2xl font-bold Montserrat-bold">Cart</p>
+  </div>
+  <div class="w-full h-[2px] bg-[#E5F3DF] mt-2.5 mb-[30px]"></div>
+  <div class="md:w-[100%] max-w-[500px] w-full  flex flex-col gap-3 p-[30px] md:pr-0">
+    <div class="flex relative gap-5 md:flex-row flex-col" *ngFor="let item of data">
+      <img class="max-w-[120px]" [src]="item.img" alt="" />
+      <div class="w-full flex flex-col justify-between">
+        <div>
+          <p class="text-lg text-[#043645] font-bold">{{ item.name }}</p>
+          <p class="text-[#929292]">{{ item.type }}</p>
+        </div>
+        <div class="flex justify-between w-full">
+          <p class="text-[#929292]">
+            Quantity:<span class="text-[#75c257]"> {{ item.quantity }}</span>
+          </p>
+          <p class="text-[#75c257] text-lg">{{ item.price }}</p>
+        </div>
+      </div>
+    </div>
+    <div class="w-full h-[1px] bg-[#D7D7D7] mt-2.5 mb-6"></div>
+    <div class="relative">
+      <input
+        type="search"
+        id="search"
+        class="block w-full p-4 pl-5 text-sm font-semibold text-gray-900 border border-gray-300 bg-white"
+        placeholder="Discount Code"
+        required
+      />
+      <button
+        type="submit"
+        class="text-white absolute right-1 bottom-[3px] bg-[#C6C6C6] hover:opacity-80 focus:ring-4 focus:outline-none px-4 py-3 duration-200 font-extrabold"
+      >
+        APPLY
+      </button>
+    </div>
+    <div class="w-full">
+            <div class="flex justify-between">
+                <p class="Montserrat-bold">SUBTOTAL</p>
+                <p class="text-[#75c257] text-lg">$840.00</p>
+            </div>
+            <div  class="flex justify-between my-3">
+                <p class="Montserrat-bold">SHIPPING</p>
+                <p class="text-[#929292] text-sm">Calculated at next step.</p>
+            </div>
+            <div class="w-full h-[1px] bg-[#D7D7D7] my-5"></div>
+            <div class="flex justify-between">
+                <p class="Montserrat-bold">TOTAL</p>
+                <p class="text-[#75c257] text-lg">$840.00</p>
+            </div>
+    </div>
+  </div>
+</div>

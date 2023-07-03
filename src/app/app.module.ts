@@ -10,6 +10,10 @@ import { LandingInputsComponent } from './components/landing-inputs/landing-inpu
 import { BurgerCloseComponent } from './components/burger-close/burger-close.component';
 import { ProductDetailComponent } from './pages/product-detail/product-detail.component';
 import { ProductDetailCarouselComponent } from './components/product-detail-carousel/product-detail-carousel.component';
+import { ShippingComponent } from './pages/shipping/shipping.component';
+import { ShippingAndPaymentComponent } from './components/shipping-and-payment/shipping-and-payment.component';
+import { ShippingCartComponent } from './components/shipping-cart/shipping-cart.component';
+import { CardModalComponent } from './components/card-modal/card-modal.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +24,11 @@ import { ProductDetailCarouselComponent } from './components/product-detail-caro
     LandingInputsComponent,
     BurgerCloseComponent,
     ProductDetailComponent,
-    ProductDetailCarouselComponent
+    ProductDetailCarouselComponent,
+    ShippingComponent,
+    ShippingAndPaymentComponent,
+    ShippingCartComponent,
+    CardModalComponent
   ],
   imports: [
     BrowserModule,

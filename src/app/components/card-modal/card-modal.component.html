@@ -1,0 +1,60 @@
+
+<div class="w-[100%] absolute z-[1001]  top-0 right-0 flex">
+    <div class="w-1/2 bg-black opacity-60">
+        
+    </div>
+    <div class="w-1/2  flex">
+        <div class="w-[20px] bg-[#75c257f3] min-h-full">
+    
+        </div>
+        <div class="w-full bg-white h-full">
+            <div class=" pl-[50px] h-[110px] border-b-2 border-b-[#7BC35E] w-full">
+                <div class="w-[70%] flex justify-between items-center h-full">
+                    <p class="text-[#043645] text-2xl Montserrat-bold">Cart</p>
+                    <button (click)="closeModal()"><img class="max-w-[50px] Mons" src="../../../assets/images/icons/close.svg" alt=""></button>
+                </div>
+            </div>
+           <div class="w-[70%] flex flex-col mt-[30px] ml-[30px]">
+                <div  *ngFor="let item of data">
+                    <div class="flex relative gap-5 md:flex-row flex-col w-full">
+                        <img class="max-w-[120px]" [src]="item.img" alt="" />
+                        <div class="w-full flex flex-col justify-between">
+                          <div>
+                            <p class="text-lg text-[#043645] font-bold">{{ item.name }}</p>
+                            <p class="text-[#929292]">{{ item.type }}</p>
+                          </div>
+                          <div class="flex justify-between w-full">
+                            <p class="text-[#929292]">
+                              Quantity:<span class="text-[#75c257]"> {{ item.quantity }}</span>
+                            </p>
+                            <p class="text-[#75c257] text-lg">{{ item.price }}</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="w-full h-[1px] bg-[#D7D7D7] my-5"></div>
+    
+                </div>
+                <label for="" class=" Montserrat-bold text-sm mb-1">Order Note</label>
+                <textarea class="border border-[#D7D7D7] h-[100px]" name="" id="" cols="30" rows="10"></textarea>
+                <div class="h-[180px]">
+    
+                </div>
+           </div>
+           <div class="w-full h-[1px] bg-[#D7D7D7] my-7"></div>
+           <div class="w-[70%] ml-[30px]">
+                <div class="flex justify-between">
+                    <p class=" Montserrat-bold text-sm mb-1">SUBTOTAL</p>
+                    <p class="text-[#75c257] text-lg">$840.00</p>
+                </div>
+                <div class="flex flex-col items-center">
+                        <p class="text-sm text-[#929292] mb-2">Shipping, taxes, and discount codes calculated at checkout.</p>
+                        <button
+                        class="w-full border-2 border-[#75C257] py-1 text-[#75C257] font-semibold mb-11"
+                      >
+                      PROCEED TO CHECKOUT
+                      </button>
+                </div>
+           </div>
+        </div>
+    </div>
+</div>

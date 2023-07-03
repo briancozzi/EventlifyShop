@@ -32,8 +32,17 @@ export class ProductDetailCarouselComponent {
 
 
   setActiveImage(image: any): void {
-    this.activeImage = image;
-    this.disableButtons()
+    let imagee = document.getElementById('my-image');
+    if (imagee) {
+      imagee.style.opacity = '0';
+      setTimeout(() => {
+        this.activeImage = image;
+        this.disableButtons();
+        if (imagee) {
+          imagee.style.opacity = '1';
+        }
+      }, 300);
+    }
   }
 
   prev(activeImage: any): void {
