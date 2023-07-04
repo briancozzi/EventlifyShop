@@ -2,7 +2,7 @@
   <div
     class="md:w-9/12 w-full gap-3 md:gap-0 px-3 md:px-0 flex max-w-[1070px] md:flex-row flex-col mx-auto"
   >
-    <div class="w-full pr-5">
+    <div class="w-full md:pr-5 pr-0">
       <p class="text-[#929292] text-base">
         Category:<span class="text-[#75C257]"> Tee Signs</span>
       </p>
@@ -11,7 +11,10 @@
         <p class="text-[#043645] text-3xl">(Coroplast)</p>
       </div>
       <p class="text-[#75C257] text-xl">$35.00 /<span class="text-sm">Sign</span></p>
-      <hr class="border-t-[#929292] mt-3 md:mb-7 mb-3" />
+      <hr class="border-t-[#929292] mt-3 md:mb-7 mb-3 hidden md:block" />
+      <div class="max-w-[660px] mt-3 md:mt-0 block md:hidden">
+        <app-product-detail-carousel> </app-product-detail-carousel>
+      </div>
       <p class="text-[#929292] mb-1.5 text-base">Style</p>
       <div class="flex gap-2 mb-5 font-bold">
         <button class="text-black border-2 border-black w-[142px] text-sm">
@@ -94,7 +97,7 @@
         </li>
       </ul>
     </div>
-    <div class="max-w-[660px] mt-3 md:mt-0">
+    <div class="max-w-[660px] mt-3 md:mt-0 hidden md:block">
       <app-product-detail-carousel> </app-product-detail-carousel>
     </div>
   </div>
