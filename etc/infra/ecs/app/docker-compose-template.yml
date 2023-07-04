@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+  ${APP_CONTAINER_NAME}:
+    image: ${AWS_ACCOUNT_ID}.dkr.ecr.${REGION}.amazonaws.com/${APP_CONTAINER_IMAGE}:${IMAGE_ID}-${ENVIRONMENT}
+    ports:
+      - ${APP_CONTAINER_PORT}:${APP_CONTAINER_PORT}
+    logging:
+      driver: awslogs
+      options:
+        awslogs-group: ${APP_AWS_LOG_GROUP}
+        awslogs-region: ${REGION}
+        awslogs-stream-prefix: ecs
