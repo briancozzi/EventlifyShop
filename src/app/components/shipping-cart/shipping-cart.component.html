@@ -20,7 +20,7 @@
       </div>
     </div>
     <div class="w-full h-[1px] bg-[#D7D7D7] mt-2.5 mb-6"></div>
-    <div class="relative">
+    <div *ngIf="code, else discount" class="relative">
       <input
         type="search"
         id="search"
@@ -35,10 +35,26 @@
         APPLY
       </button>
     </div>
+    <ng-template #discount>
+        <div class="flex justify-between">
+          <p class="Montserrat-bold">DISCOUNT CODE</p>
+          <div class="flex items-start gap-3">
+              <div class="text-end">
+                  <p class="font-bold text-sm">DEADPOOLWASRIGHT</p>
+                  <p class="text-[#929292] text-sm">(15% discount)</p>
+              </div>
+              <button><img class="min-w-[16px]" src="../../../assets/images/icons/red-close.svg" alt=""></button>
+          </div>
+        </div>
+    </ng-template>
     <div class="w-full">
-            <div class="flex justify-between">
+            <div class="flex justify-between my-3">
                 <p class="Montserrat-bold">SUBTOTAL</p>
                 <p class="text-[#75c257] text-lg">$840.00</p>
+            </div>
+            <div class="flex justify-between">
+                <p class="Montserrat-bold">DISCOUNT APPLIED</p>
+                <p class="text-[#75c257] text-lg">$126.00</p>
             </div>
             <div  class="flex justify-between my-3">
                 <p class="Montserrat-bold">SHIPPING</p>
@@ -47,7 +63,7 @@
             <div class="w-full h-[1px] bg-[#D7D7D7] my-5"></div>
             <div class="flex justify-between">
                 <p class="Montserrat-bold">TOTAL</p>
-                <p class="text-[#75c257] text-lg">$840.00</p>
+                <p class="text-[#75c257] text-lg">{{!code ? '$840.00' : '$714.00'}}</p>
             </div>
     </div>
   </div>

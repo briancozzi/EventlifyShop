@@ -6,5 +6,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./shipping-and-payment.component.scss']
 })
 export class ShippingAndPaymentComponent {
-
+  shipping:boolean = true
+  newCard:boolean = true
 }

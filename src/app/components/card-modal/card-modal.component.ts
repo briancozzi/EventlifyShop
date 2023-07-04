@@ -15,6 +15,8 @@ export class CardModalComponent {
     { img: '../../../assets/images/img8.png', name: 'Golf Ball Tee Sign (Coroplast)', type: 'Color Ring', quantity: 12, price: '$420.00' }
   ]
 
+  isEmpty:boolean = false
+
 
   closeModal(): void {
     this.isOpened = false;
