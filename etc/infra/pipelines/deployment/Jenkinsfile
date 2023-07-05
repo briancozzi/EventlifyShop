@@ -1,7 +1,7 @@
 pipeline {
     agent any
     parameters { 
-        string(name: 'COMMIT', defaultValue: 'develop', description: 'Enter the commit hash or branch name that you would like to build & deploy.')
+        string(name: 'COMMIT', defaultValue: 'master', description: 'Enter the commit hash or branch name that you would like to build & deploy.')
         choice(name: 'ENVIRONMENT', choices: ['tech', 'com'], description: 'Choose the environment you want to deploy to.')
         string(name: 'IMAGE_ID', defaultValue: 'NONE', description: 'Enter a known image id you want to deploy. Leave default to build and deploy a new one.')
     }
