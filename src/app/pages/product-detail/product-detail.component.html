@@ -12,7 +12,7 @@
       </div>
       <p class="text-[#75C257] text-xl">$35.00 /<span class="text-sm">Sign</span></p>
       <hr class="border-t-[#929292] mt-3 md:mb-7 mb-3 hidden md:block" />
-      <div class="max-w-[660px] mt-3 md:mt-0 block md:hidden">
+      <div class="max-w-[660px] mt-3 md:mt-0" *ngIf="windowWidth < 800">
         <app-product-detail-carousel> </app-product-detail-carousel>
       </div>
       <p class="text-[#929292] mb-1.5 text-base">Style</p>
@@ -97,7 +97,7 @@
         </li>
       </ul>
     </div>
-    <div class="max-w-[660px] mt-3 md:mt-0 hidden md:block">
+    <div *ngIf="windowWidth >= 800" class="max-w-[660px] mt-3 md:mt-0" >
       <app-product-detail-carousel> </app-product-detail-carousel>
     </div>
   </div>

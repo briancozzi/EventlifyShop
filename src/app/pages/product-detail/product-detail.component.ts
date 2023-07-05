@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 
 @Component({
   selector: 'app-product-detail',
@@ -11,5 +11,12 @@ export class ProductDetailComponent {
     { pic: '../../../assets/images/img7.png', desc: '(Corrugated CPVC Boards)', name: 'Hole Signs', price: '$300.00', sub: '15 Signs' },
     { pic: '../../../assets/images/img8.png', desc: '(Premium Golf Balls)', name: 'Golf Ball with Sponsor Logos', price: '$300.00', sub: '10 Golf Balls' }
   ]
+
+  windowWidth:any = window.innerWidth
+
+  @HostListener('window:resize', ['$event'])
+  onResize(event: any) {
+    this.windowWidth = event.target.innerWidth;
+  }
 }
 
