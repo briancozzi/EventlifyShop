@@ -17,6 +17,7 @@ export class NavbarComponent {
 
   openModal(): void{
     this.isOpened = true
+    document.querySelector('body')?.classList.add('no-scroll')
   }
 }
 

@@ -14,6 +14,7 @@ import { ShippingComponent } from './pages/shipping/shipping.component';
 import { ShippingAndPaymentComponent } from './components/shipping-and-payment/shipping-and-payment.component';
 import { ShippingCartComponent } from './components/shipping-cart/shipping-cart.component';
 import { CardModalComponent } from './components/card-modal/card-modal.component';
+import { ConfirmationComponent } from './pages/confirmation/confirmation.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { CardModalComponent } from './components/card-modal/card-modal.component
     ShippingComponent,
     ShippingAndPaymentComponent,
     ShippingCartComponent,
-    CardModalComponent
+    CardModalComponent,
+    ConfirmationComponent
   ],
   imports: [
     BrowserModule,

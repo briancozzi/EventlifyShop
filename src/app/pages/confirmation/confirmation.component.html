@@ -1,0 +1,53 @@
+<div class="w-full flex justify-center">
+  <div class="md:w-9/12 w-full px-3 md:px-0 py-6 md:py-12 max-w-[730px] text-center">
+    <div class="w-full flex flex-col items-center">
+      <img src="../../../assets/images/confirm-main.svg" alt="" />
+      <p class="text-3xl text-[#043645] font-bold mt-4">
+        Your order has been placed successfully!
+      </p>
+      <p class="text-2xl Montserrat-bold my-3">Order number is: 9028389459</p>
+      <p class="text-xl text-[#929292] font-light">
+        You will receive an email regarding the same at
+        <span class="text-[#76c056]"> amitsainwal@gmail.com</span>
+      </p>
+    </div>
+    <div class="mt-8">
+      <div class="w-full h-[1px] bg-[#D7D7D7] my-3"></div>
+      <p class="text-2xl Montserrat-bold">Order details</p>
+      <div class="w-full h-[1px] bg-[#D7D7D7] my-3"></div>
+    </div>
+    <div class="w-full flex justify-center text-left mt-10">
+        <div class="md:w-[60%] w-[100%] overflow-auto flex flex-col gap-7">
+            <div *ngFor="let item of data">
+                <div class="flex relative gap-5 md:flex-row flex-col w-full">
+                  <img class="max-w-[120px]" [src]="item.img" alt="" />
+                  <div class="w-full flex flex-col justify-between">
+                    <div>
+                      <p class="text-lg text-[#043645] font-bold">
+                        {{ item.name }}
+                      </p>
+                      <p class="text-[#929292]">{{ item.type }}</p>
+                    </div>
+                    <div class="flex justify-between w-full">
+                        <p class="text-[#929292]">
+                            Quantity:<span class="text-[#75c257]"> {{ item.quantity }}</span>
+                          </p>
+                      <p class="text-[#75c257] text-lg">{{ item.price }}</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+        </div>
+    </div>
+    <div class="mt-9 md:mb-20 mb-10">
+        <div class="w-full h-[1px] bg-[#D7D7D7] my-3"></div>
+       <a href="/">
+        <button
+        class="md:w-[60%] w-full border-2 border-[#75C257] py-1 text-[#75C257] font-semibold mt-3"
+      >
+      CONTINUE SHOPPING
+      </button>
+       </a>
+    </div>
+  </div>
+</div>
