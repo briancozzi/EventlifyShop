@@ -39,6 +39,7 @@ var cals = {
             fade: true,
             loop:false,
             infinite: false,
+             asNavFor: '.product-details__thumb-slider',
         });
             $('.product-details__thumb-slider').slick({
             slidesToShow: 3,
