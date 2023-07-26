@@ -2,7 +2,7 @@
     <div class="logo">
         <div class=" container">
             <h5>Powered by</h5>
-            <img src="src/images/eventlify-logo-gry.png" alt="">
+            <img src="src/images/footer-logo.png" alt="">
         </div>
 
     </div>

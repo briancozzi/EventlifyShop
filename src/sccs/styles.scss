@@ -570,7 +570,9 @@
 }
 
 @media screen and (max-width: 767px) {
-
+    .inner-wrapper {
+        margin-top: 64px;
+    }
     .d-none-md {
         display: none!important;
     }
@@ -665,6 +667,11 @@
             min-height:112px;
             @media screen and (max-width:991px){
                 min-height:82px;
+            }
+            @media screen and (max-width:767px){
+                min-height:64px;
+                padding-top:6px;
+                padding-bottom:6px;
             }
             h2 {
                 font-size: rem(26px);

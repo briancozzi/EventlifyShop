@@ -1894,9 +1894,6 @@ header {
     @media screen and (max-width: 575px) {
       header .left-side .logo {
         max-width: 150px; } }
-    @media screen and (max-width: 450px) {
-      header .left-side .logo {
-        max-width: 120px; } }
     header .left-side .logo img {
       margin-left: 2px;
       width: 100%; }
@@ -1981,6 +1978,10 @@ header {
         header .right-side ul li.account a:not(:last-child) {
           padding-right: 0.5rem;
           margin-right: 0.5rem; } }
+  @media screen and (max-width: 767px) {
+    header {
+      min-height: 64px;
+      padding: 6px 0; } }
   @media screen and (max-width: 450px) {
     header .right-side ul li a svg {
       width: 20px; }
@@ -2468,6 +2469,8 @@ footer {
     margin-top: 80px; } }
 
 @media screen and (max-width: 767px) {
+  .inner-wrapper {
+    margin-top: 64px; }
   .d-none-md {
     display: none !important; }
   .golf-event .desc {
@@ -2529,6 +2532,11 @@ footer {
     @media screen and (max-width: 991px) {
       .modal.custom-modal .modal-head {
         min-height: 82px; } }
+    @media screen and (max-width: 767px) {
+      .modal.custom-modal .modal-head {
+        min-height: 64px;
+        padding-top: 6px;
+        padding-bottom: 6px; } }
     .modal.custom-modal .modal-head h2 {
       font-size: 1.625rem;
       font-weight: 600;
