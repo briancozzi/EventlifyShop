@@ -106,7 +106,7 @@
                             </form>
                         </div>
                         <div class="button-row">
-                            <input type="submit" class="btn btn-primary" value="PAY NOW">
+                            <a href="confirmation" class="btn btn-primary">PAY NOW</a>
                         </div>
                     </div>
                 </div>

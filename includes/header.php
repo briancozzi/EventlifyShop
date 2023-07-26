@@ -69,15 +69,16 @@
                     </div>
                     <div class="right-side">
                         <ul>
-                            <li><a href="#" data-path="src/data/cart.html" data-toggle="custom-modal"
-                                    data-size="medium">Donate</a></li>
+                            <!-- <li><a href="#" data-path="src/data/cart.html" data-toggle="custom-modal"
+                                    data-size="medium">Donate</a></li> -->
                             <li class="account">
                                 <a href="#">LOGIN</a>
                                 <a href="#">Signup</a>
 
                             </li>
                             <li>
-                                <a href="shipping">
+                                <a href="#" data-path="src/data/cart.html" data-toggle="custom-modal"
+                                    data-size="medium">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="26.548" height="23.595"
                                         viewBox="1272 40 26.548 23.595">
                                         <path
