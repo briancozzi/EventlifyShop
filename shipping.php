@@ -62,7 +62,8 @@
                             <input type="tel" class="form-control" placeholder="Phone">
                         </div>
                         <div class="button-row">
-                            <button type="button" class="btn btn-primary">CONTINUE TO SHIPPING</button>
+                            <button type="button" onClick="location.href='shipping&payment'"
+                                class="btn btn-primary "><span>CONTINUE TO SHIPPING</span></button>
                         </div>
                     </form>
                 </div>
@@ -108,7 +109,7 @@
                     </div>
                     <div class="shipping__detail--discount-code">
                         <input id="searchInput" type="text" class="form-control" placeholder="Discount Code">
-                        <button type="button" class="btn btn-primary apply" disabled>APPLY</button>
+                        <button type="button" class="btn btn-primary apply" disabled><span>APPLY</span></button>
                     </div>
                     <div class="shipping__detail--total">
                         <ul class="discount-code">

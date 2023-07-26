@@ -18,6 +18,11 @@
     letter-spacing: 2px;
     justify-content: center;
     width: 100%;
+    font-weight:600;
+    span{
+        position:relative;
+        top:1px;
+    }
     @media screen and (max-width:767px){
         letter-spacing: 1px;
     }

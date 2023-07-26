@@ -3,15 +3,6 @@ $(document).ready(function() {
     cals.init({
         slick: $("[data-slick]"),
         selectpicker: $(".selectpicker"),
-        innerscroll: $(".inner-scroll"),
-
-        datepicker_inline: $("#datepicker_inline"),
-        timepicker: $("#timepicker, #timepicker2, #timepicker3, #timepicker4"),
-        datepicker: $("#datepicker"),
-        datepicker2: $("#datepicker2"),
-        load_more_btn: ".load-more a",
-        load_more_container: ".load-items-container",
-
     });
 });
 
@@ -22,11 +13,9 @@ var cals = {
         self = this;
         this.utilities();
         this.configureModal();
-        this.datepickers();
         this.selectpicker();
         this.Slider();
         this.stickyHeader();
-        this.loadmoreitems();
 
     },
 
@@ -65,30 +54,7 @@ var cals = {
         });
     
     },
-    loadmoreitems: function() {
-        $(this.settings.load_more_btn).on("click", function(e) {
-            e.preventDefault();
-            var prnt = $(this);
-            var dataurl = $(this).attr("data-path");
-            if (dataurl) {
-                $(".load-more").addClass("loading");
-                setTimeout(function() {
-                    $.ajax({
-                        url: dataurl,
-                        dataType: "html",
-                        success: function(responseText) {
-                            if (responseText != "") {
-                                var dataToInsert = $.parseHTML(responseText);
-                                $(self.settings.load_more_container).append(dataToInsert);
-                                //contentWayPoint();
-                            }
-                            $(".load-more").removeClass("loading");
-                        }
-                    })
-                }, 1000);
-            }
-        });
-    },
+
     stickyHeader: function() {
         $(window).scroll(function() {
 
@@ -105,43 +71,30 @@ var cals = {
         $(".touchspin").TouchSpin({
             min: 12
         });
-
+         cals.settings.slick.slick();
         
         $('#searchInput').keyup(function () {
-        if ($(this).val() == '') {
-            $('.apply').prop('disabled', true);
-        } else {
-            $('.apply').prop('disabled', false);
-        }
-    });
+            if ($(this).val() == '') {
+                $('.apply').prop('disabled', true);
+            } else {
+                $('.apply').prop('disabled', false);
+            }
+            
+        });
 
+        $(".payment__detail--saved-cards a").click(function (e) {
+            e.preventDefault();
+            $(this).parent().closest('.payment__detail').find('.saved-card-wrapper').slideToggle("slow");
+            $(this).parent().closest('.payment__detail').find('.new-card-wrapper').slideToggle("slow");
 
-    },
-    // datepickers
-    datepickers: function() {
-        this.settings.timepicker.datetimepicker({
-            format: 'LT',
-            ignoreReadonly: true,
-            keepOpen: false,
         });
-        this.settings.datepicker_inline.datetimepicker({
-            inline: true,
-            format: 'DD/MM/YYYY',
-        });
-        this.settings.datepicker.datetimepicker({
-            format: 'L',
-            keepOpen: false,
-            ignoreReadonly: true,
-        });
-        this.settings.datepicker2.datetimepicker({
-            format: 'L',
-            keepOpen: false,
-            ignoreReadonly: true,
-        });
+
+        // mCustomScrollbar
+        $(".inner-scroll").mCustomScrollbar();
     },
     // modal
-    configureModal: function() {
-        $("body").on("click", "*[data-toggle='custom-modal']", function(e) {
+    configureModal: function () {
+        $("body").on("click", "*[data-toggle='custom-modal']", function (e) {
             e.preventDefault();
             $(".custom-modal").removeClass("large");
             var url = $(this).attr("data-path");
@@ -150,7 +103,7 @@ var cals = {
             $(".custom-modal").removeClass("large");
             $(".custom-modal").removeClass("medium");
             $(".custom-modal").removeClass("small");
-            $.get(url, function(data) {
+            $.get(url, function (data) {
                 $(".custom-modal").modal("show");
                 $(".custom-modal .modal-body").html(data);
 
@@ -160,17 +113,17 @@ var cals = {
                 if (class_name) {
                     $(".custom-modal").addClass(class_name);
                 }
-                setTimeout(function() {
+                setTimeout(function () {
                     $(".custom-modal .modal-body").addClass("show");
                 }, 200);
-                $("body").addClass("remove-scroll");
+                $("html").addClass("remove-scroll");
             });
         });
-        $(".modal").on("hidden.bs.modal", function() {
+        $(".modal").on("hidden.bs.modal", function () {
             $(".custom-modal .modal-body").removeClass("show");
             $(".custom-modal .modal-body").empty();
             $(".custom-modal").removeClass("account-modal");
-            $("body").removeClass("remove-scroll");
+            $("html").removeClass("remove-scroll");
             $(".custom-modal").removeClass("large");
             $(".custom-modal").removeClass("medium");
             $(".custom-modal").removeClass("small");

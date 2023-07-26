@@ -32,7 +32,8 @@
                     </div>
                     <label class="info-text">You have to choose minimum of 12 units</label>
                     <div class="button-row">
-                        <a href="#" class="btn btn-default">ADD TO CART</a>
+                        <a href="#" class="btn btn-default" data-path="src/data/cart.html" data-toggle="custom-modal"
+                            data-size="medium">ADD TO CART</a>
                     </div>
                 </div>
                 <div class="product-details__detail">
@@ -128,7 +129,6 @@
                         <p class="name">Mulligan Sponsor Cards /Tickets</p>
                         <p class="price">$150.00/<span>50 Cards</span></p>
                     </div>
-                    <a href="#" class="abs-link"></a>
                 </div>
             </div>
             <div class="col-lg-4 col-sm-6">
@@ -140,7 +140,6 @@
                         <p class="name">Hole Signs<br>(Corrugated CPVC Boards)</p>
                         <p class="price">$300.00/<span>15 Signs</span></p>
                     </div>
-                    <a href="#" class="abs-link"></a>
                 </div>
             </div>
             <div class="col-lg-4 col-sm-6">
@@ -152,7 +151,6 @@
                         <p class="name">Golf Ball with Sponsor Logos<br>(Premium Golf Balls)</p>
                         <p class="price">$300.00/<span>10 Golf Balls</span></p>
                     </div>
-                    <a href="#" class="abs-link"></a>
                 </div>
             </div>
         </div>

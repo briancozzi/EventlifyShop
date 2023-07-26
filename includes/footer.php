@@ -1,11 +1,4 @@
 <footer>
-    <!-- <div class="container">
-        <div class="host-by">
-            Hosted By <span>Cal's Angels</span>
-        </div>
-    </div> -->
-
-
     <div class="logo">
         <div class=" container">
             <h5>Powered by</h5>

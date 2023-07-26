@@ -58,6 +58,20 @@ $rel-spacing-unit--small: .5em;
     font-style: normal;
     font-display: block;
 }
+@font-face {
+    font-family: 'Gibson';
+    src: url('../fonts/gibson-regular/GibsonRegular.eot');
+    src: url('../fonts/gibson-regular/GibsonRegular.eot') format('embedded-opentype'),
+         url('../fonts/gibson-regular/GibsonRegular.woff2') format('woff2'),
+         url('../fonts/gibson-regular/GibsonRegular.woff') format('woff'),
+         url('../fonts/gibson-regular/GibsonRegular.ttf') format('truetype'),
+         url('../fonts/gibson-regular/GibsonRegular.svg#GibsonRegular') format('svg');
+         font-weight: 400;
+        font-style: normal;
+        font-display: block;
+}
+
+
 
 @font-face {
     font-family: 'YesevaOne-Regular';
