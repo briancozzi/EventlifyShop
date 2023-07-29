@@ -1,0 +1,143 @@
+@import 'functions';
+// font-name
+
+$primary-font: 'Montserrat', sans-serif;
+$secondary-font: 'Gibson';
+//$g-sb: 'GibsonSemiBold';
+$y-regular: 'YesevaOne-Regular';
+$arial-font: Arial, 
+sans-serif;
+
+
+//@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;900&display=swap');
+
+
+//colors
+$default: #1e2027;
+$primary:#76c257;
+$secondary: #898989;
+//** Background color for `<body>`.
+$body-bg: #f8f8f8 !default;
+//** Global text color on `<body>`.
+$text-red: #d55342 !default;
+//** Global textual link color.
+//** Primary Font
+$spacing-unit: rem(20px);
+$spacing-unit--x-small: rem(10px);
+$spacing-unit--small: rem(15px);
+$spacing-unit--medium: rem(30px);
+$spacing-unit--large: rem(40px);
+$spacing-unit--x-large: rem(60px);
+$rel-spacing-unit: 1em;
+$rel-spacing-unit--small: .5em;
+//**column gaps
+.col-gap-32 {
+    margin-left: -16px;
+    margin-right: -16px;
+}
+
+.col-gap-32>div {
+    padding-left: 16px;
+    padding-right: 16px;
+}
+
+@font-face {
+    font-family: 'Gibson';
+    src: url('../fonts/gibson-regular/GibsonRegular.eot');
+    src: url('../fonts/gibson-regular/GibsonRegular.eot') format('embedded-opentype'), url('../fonts/gibson-regular/GibsonRegular.woff2') format('woff2'), url('../fonts/gibson-regular/GibsonRegular.woff') format('woff'), url('../fonts/gibson-regular/GibsonRegular.ttf') format('truetype'), url('../fonts/gibson-regular/GibsonRegular.svg#GibsonRegular') format('svg');
+    font-weight: 400;
+    font-style: normal;
+    font-display: block;
+}
+
+@font-face {
+    font-family: 'Gibson';
+    src: url('../fonts/gibson-font/GibsonSemiBold.eot');
+    src: url('../fonts/gibson-font/GibsonSemiBold.eot') format('embedded-opentype'), url('../fonts/gibson-font/GibsonSemiBold.woff2') format('woff2'), url('../fonts/gibson-font/GibsonSemiBold.woff') format('woff'), url('../fonts/gibson-font/GibsonSemiBold.ttf') format('truetype'), url('../fonts/gibson-font/GibsonSemiBold.svg#GibsonSemiBold') format('svg');
+    font-weight: 600;
+    font-style: normal;
+    font-display: block;
+}
+@font-face {
+    font-family: 'Gibson';
+    src: url('../fonts/gibson-regular/GibsonRegular.eot');
+    src: url('../fonts/gibson-regular/GibsonRegular.eot') format('embedded-opentype'),
+         url('../fonts/gibson-regular/GibsonRegular.woff2') format('woff2'),
+         url('../fonts/gibson-regular/GibsonRegular.woff') format('woff'),
+         url('../fonts/gibson-regular/GibsonRegular.ttf') format('truetype'),
+         url('../fonts/gibson-regular/GibsonRegular.svg#GibsonRegular') format('svg');
+         font-weight: 400;
+        font-style: normal;
+        font-display: block;
+}
+
+
+
+@font-face {
+    font-family: 'YesevaOne-Regular';
+    src: url('../fonts/YesevaOne-Regular/YesevaOne-Regular.eot') format('embedded-opentype');
+    src: url('../fonts/YesevaOne-Regular/YesevaOne-Regular.eot') format('embedded-opentype'), url('../fonts/YesevaOne-Regular/YesevaOne-Regular.woff2') format('woff2'), url('../fonts/YesevaOne-Regular/YesevaOne-Regular.woff') format('woff'), url('../fonts/YesevaOne-Regular/YesevaOne-Regular.ttf') format('truetype'), url('YesevaOne-Regular/YesevaOne-Regular.svg#YesevaOne-Regular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Veneer";
+    src: url("../fonts/veneer/433bde376659d1de239a57ec0e97722d.eot"); /* IE9*/
+    src: url("../fonts/veneer/433bde376659d1de239a57ec0e97722d.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
+    url("../fonts/veneer/433bde376659d1de239a57ec0e97722d.woff2") format("woff2"), /* chrome firefox */
+    url("../fonts/veneer/433bde376659d1de239a57ec0e97722d.woff") format("woff"), /* chrome firefox */
+    url("../fonts/veneer/433bde376659d1de239a57ec0e97722d.ttf") format("truetype"), /* chrome firefox opera Safari, Android, iOS 4.2+*/
+    url("../fonts/veneer/433bde376659d1de239a57ec0e97722d.svg#Veneer") format("svg"); /* iOS 4.1- */
+}
+
+// font sizes
+$h--1: ( base: rem(22px),
+tablet: rem(20px),
+desktop: rem(22px),
+);
+$h--2: ( base: rem(32px),
+tablet: rem(32px),
+desktop: rem(32px),
+);
+$h--3: ( base: rem(18px),
+tablet: rem(16px),
+desktop: rem(18px),
+);
+$h--4: ( base: rem(20px),
+tablet: rem(22px),
+desktop: rem(26px),
+);
+$h--5: ( base: rem(18px),
+tablet: rem(20px),
+desktop: rem(22px),
+);
+$h--6: ( base: rem(16px),
+tablet: rem(14px),
+desktop: rem(16px),
+);
+$p: rem(16px);
+$p--small: rem(12px);
+$p--medium: rem(18px);
+$p--large: rem(24px);
+// line-height ratios
+$lh: 1.5;
+$lh--x-small: 1.1;
+$lh--small: 1.25;
+$lh--large: 1.75;
+// letter spacing
+$ls: ( // base: -30
+);
+// weights
+// $w--light: 300;
+$w--normal: 400;
+$w--medium: 500;
+$w--semibold: 600;
+$w--bold: 700;
+// $w--heavy: 800;
+$breakpoints: ( mobile: 320px,
+landscape: 767px,
+ipadlandscape: 991px,
+ipad: 1024px,
+ipadlarge: 1200px,
+wide: 1300px) !default;
