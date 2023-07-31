@@ -12,6 +12,11 @@ task_definition:
       cpu_shares: ${APP_CONTAINER_CPU_SHARES}
       mem_limit: ${APP_CONTAINER_MEM_LIMIT}
       mem_reservation: ${APP_CONTAINER_MEM_RESERVATION}
+    ${APACHE_CONTAINER_NAME}:
+      essential: True
+      cpu_shares: ${APACHE_CONTAINER_CPU_SHARES}
+      mem_limit: ${APACHE_CONTAINER_MEM_LIMIT}
+      mem_reservation: ${APACHE_CONTAINER_MEM_RESERVATION} 
 
 run_params:
   network_configuration:

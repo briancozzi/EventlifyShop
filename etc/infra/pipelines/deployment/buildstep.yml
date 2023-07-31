@@ -8,6 +8,8 @@ env:
     AWS_ACCOUNT_ID: 496576512777
     DOCKERFILE_PATH: etc/docker/Dockerfile
     SECRET_BUCKET: s3://secrets-eventlify
+    DOCKERFILE_PATH_APACHE: etc/docker/apache/Dockerfile
+    APACHE: apache
 
 phases:
   install:
@@ -29,6 +31,8 @@ phases:
       - aws ecr batch-get-image --registry-id $AWS_ACCOUNT_ID --repository-name $IMAGE_REPO_NAME --image-ids imageTag=$GIT_COMMIT-$ENVIRONMENT > image_result.json
       - RESULT=$(jq '.failures | length' image_result.json) && rm image_result.json
       - echo $RESULT
+      - aws s3 cp $SECRET_BUCKET/$IMAGE_REPO_NAME/$ENVIRONMENT/ etc/infra/ --recursive --region $AWS_DEFAULT_REGION
+      - aws s3 cp $SECRET_BUCKET/$IMAGE_REPO_NAME/$ENVIRONMENT/.env . --region $AWS_DEFAULT_REGION
       - |
         if  true; then
           aws s3 cp $SECRET_BUCKET/$IMAGE_REPO_NAME/$ENVIRONMENT/ . --recursive --region $AWS_DEFAULT_REGION
@@ -37,6 +41,9 @@ phases:
           docker tag $IMAGE_REPO_NAME:latest $AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/$IMAGE_REPO_NAME:$GIT_COMMIT-$ENVIRONMENT
           docker push $AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/$IMAGE_REPO_NAME:$GIT_COMMIT-$ENVIRONMENT
         fi
+      - docker build -t $APACHE -f $DOCKERFILE_PATH_APACHE .
+      - docker tag $APACHE $AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/$APACHE:$GIT_COMMIT
+      - docker push $AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/$APACHE:$GIT_COMMIT
       - aws ecr describe-images --registry-id $AWS_ACCOUNT_ID --repository-name $IMAGE_REPO_NAME --image-ids imageTag=$GIT_COMMIT-$ENVIRONMENT > temp.json
       - TAG2=$(jq '.imageDetails[0].imageTags' temp.json)
       - rm temp.json
