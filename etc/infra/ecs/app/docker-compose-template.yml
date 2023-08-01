@@ -1,24 +1,31 @@
 version: '3'
 
 services:
-  ${APP_CONTAINER_NAME}:
-    image: ${AWS_ACCOUNT_ID}.dkr.ecr.${REGION}.amazonaws.com/${APP_CONTAINER_IMAGE}:${IMAGE_ID}
-    command: php-fpm
-    working_dir: /app
-    env_file:
-      - ../../../../.env
+#  ${APP_CONTAINER_NAME}:
+#    image: ${AWS_ACCOUNT_ID}.dkr.ecr.${REGION}.amazonaws.com/${APP_CONTAINER_IMAGE}:${IMAGE_ID}
+#    command: php-fpm
+#    working_dir: /app
+#    env_file:
+#      - ../../../../.env
+#    ports:
+#      - 9000:9000
+#    expose:
+#      - 9000
+#    logging:
+#      driver: awslogs
+#      options:
+#        awslogs-group: ${APP_AWS_LOG_GROUP}
+#        awslogs-region: ${REGION}
+#        awslogs-stream-prefix: ecs
+  ${APACHE_CONTAINER_NAME}:
+    image: ${AWS_ACCOUNT_ID}.dkr.ecr.${REGION}.amazonaws.com/apache:${IMAGE_ID}
     ports:
-      - 9000:9000
-    expose:
-      - 9000
+      - 80:80
+      - 443:443
     logging:
       driver: awslogs
       options:
         awslogs-group: ${APP_AWS_LOG_GROUP}
         awslogs-region: ${REGION}
-        awslogs-stream-prefix: ecs
-  ${APACHE_CONTAINER_NAME}:
-    image: ${AWS_ACCOUNT_ID}.dkr.ecr.${REGION}.amazonaws.com/apache:${IMAGE_ID}
-    ports:
-      - 80:80
-      - 443:443   
+        awslogs-stream-prefix: ecs   
+        

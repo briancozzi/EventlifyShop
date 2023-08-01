@@ -1,5 +1,5 @@
 #FROM httpd:alpine
-FROM httpd
+FROM php:8.1-apache
 
 ADD etc/infra/eventlify.conf /usr/local/apache2/conf/eventlify.conf 
 RUN mkdir -p /app
