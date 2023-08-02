@@ -43,6 +43,7 @@ phases:
           aws codebuild stop-build
         fi
       - aws s3 cp $SECRET_BUCKET/$IMAGE_REPO_NAME/$ENVIRONMENT/ etc/infra/ --recursive --region $AWS_DEFAULT_REGION
+      - aws s3 cp $SECRET_BUCKET/$IMAGE_REPO_NAME/$ENVIRONMENT/.env . --region $AWS_DEFAULT_REGION
       - chmod +x etc/infra/parameters-env.sh
       - . ./etc/infra/parameters-env.sh
       - cd etc/infra/ecs

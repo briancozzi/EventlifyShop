@@ -11,7 +11,8 @@ task_definition:
       essential: True
       cpu_shares: ${APP_CONTAINER_CPU_SHARES}
       mem_limit: ${APP_CONTAINER_MEM_LIMIT}
-      mem_reservation: ${APP_CONTAINER_MEM_RESERVATION}
+      mem_reservation: ${APP_CONTAINER_MEM_RESERVATION} 
+
 
 run_params:
   network_configuration:

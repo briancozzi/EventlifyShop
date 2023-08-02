@@ -4,10 +4,12 @@ services:
   ${APP_CONTAINER_NAME}:
     image: ${AWS_ACCOUNT_ID}.dkr.ecr.${REGION}.amazonaws.com/${APP_CONTAINER_IMAGE}:${IMAGE_ID}-${ENVIRONMENT}
     ports:
-      - ${APP_CONTAINER_PORT}:${APP_CONTAINER_PORT}
+      - 80:80
+      - 443:443
     logging:
       driver: awslogs
       options:
         awslogs-group: ${APP_AWS_LOG_GROUP}
         awslogs-region: ${REGION}
-        awslogs-stream-prefix: ecs
+        awslogs-stream-prefix: ecs   
+        
